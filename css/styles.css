@@ -20,12 +20,11 @@ body {
 button {
     cursor: pointer;
     font-family: inherit;
+    border: none;
 }
 
-.container {
-    width: 1158px;
-    padding: 0 15px;
-    margin: 0 auto;
+input {
+    font-family: inherit;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -45,6 +44,12 @@ img {
 * {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.container {
+    width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .link {
@@ -223,7 +228,6 @@ background-color: var(--PressedState);
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    border: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     transition-property: background-color;
@@ -505,7 +509,7 @@ flex-basis: 264px;
     color: var(--WhiteBackground);
     font-size: 16px;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.32px;
     margin-bottom: 16px;
 }
@@ -562,6 +566,7 @@ flex-basis: 264px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
+    padding: 72px 24px 24px;
     width: 408px;
     min-height: 584px;
     background-color: var(--Dairy);
@@ -604,15 +609,128 @@ flex-basis: 264px;
     border: none;
 }
 
-.modal-btn:hover .modal-icon,
-.modal-btn:focus .modal-icon {
-    fill: #ffffff;
-}
-
-.modal-icon {
+.modal-icon-x {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     fill: var(--TextColor);
 }
+
+.modal-btn:hover .modal-icon-x,
+.modal-btn:focus .modal-icon-x {
+    fill: #ffffff;
+}
+
+
+
+
+
+/* Modal Form */
+
+.modal-title {
+    display: block;
+    color: var(--TextColor);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.modal-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mdl-label-name {
+    color: var(--LightSlate);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.48px;
+}
+
+.form-btn {
+    width: 169px;
+    height: 56px;
+    color: var(--WhiteBackground);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.64px;
+    border-radius: 4px;
+    background: var(--PrimaryBrand);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    background-color: var(--PressedState);
+}
+
+.modal-form-input {
+    width: 360px;
+    height: 40px;
+    outline: transparent;
+    font-size: 18px;
+    padding: 11px 38px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus {
+    border: 1px solid var(--PrimaryBrand);
+}
+
+.modal-form-textarea {
+    width: 360px;
+    height: 120px;
+    resize: none;
+    outline: transparent;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-top: 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-textarea:focus {
+    border: 1px solid var(--PrimaryBrand);
+}
+
+.modal-form-textarea::placeholder {
+    color: rgba(46, 47, 66, 0.40);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.48px;
+}
+
+.modal-form-icon {
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    fill: var(--TextColor);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus + .modal-form-icon {
+    fill: var(--PrimaryBrand);
+}
+
+
+
+
 
 
 
@@ -737,6 +855,6 @@ flex-basis: 264px;
 .overlay-text {
     color: var(--Cloud);
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.32px;
 }
